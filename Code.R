@@ -445,11 +445,9 @@ for (window in time_windows) {
           
           models_names = c("rf", "xgbTree", "BstLm")
           models_grids = list(rf_Grid, xgbTree_Grid, BstLm_Grid)
-          
-          m = 3
+          m = 3 # choose the intended model for tuning
 
           set.seed(1)
-          
           fit <- train(fmla,
                        data = train_data,
                           # method = all_models[],
@@ -459,7 +457,7 @@ for (window in time_windows) {
                        trControl = ctrl,
                        na.action=na.pass,
                        metric="Accuracy")
-          #    print(fit)
+          # print(fit)
           
           #-------------------------------------Save Results----------------------------------------------------
           if(fold==1){
@@ -487,8 +485,8 @@ for (window in time_windows) {
         #-------------------------------------------Generalized Accuracy---------------------------------------------------------
         # outer loop (evaluation):
         
-        perform_evaluation = T          # Set to True after the best model has been selected. maually change the model's grid to the optimal for evaluation
-                                        # False while searching for the best model (only for efficiency)
+        perform_evaluation = T          # Set to True after the best model has been selected (maually change the model's grid to the optimal for evaluation)
+                                        # Set to False while searching for the best model
         if(perform_evaluation){
           for(fold in 1:K) {
             # print(fold)
@@ -522,7 +520,7 @@ for (window in time_windows) {
             models_names = c("rf", "xgbTree", "BstLm")
             models_grids = list(rf_Grid, xgbTree_Grid, BstLm_Grid)
             #-------------------------------------------------------------------
-            m = 3 # choose the intended model 
+            m = 3 # choose the intended model for evaluation 
             
             model_name = models_names[m]
             tuneparam = models_grids[[m]]
