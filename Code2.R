@@ -462,10 +462,8 @@ for (window in time_windows) {
           if(m==3){ # BstLm
             tune_param <- expand.grid(nu = fit$results$nu[best_model], 
                                       mstop = fit$results$mstop[best_model]
-            )
+                                      )
           }
-          # print(best_model)
-          # print(fit$results$mstop[best_model])
           
           #----------------------------------------------------
           
