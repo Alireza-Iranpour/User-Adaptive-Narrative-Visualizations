@@ -2,4 +2,4 @@
 Improving Prediction Accuracy of User Cognitive Abilities for User-Adaptive Narrative Visualizations
 
 
-[Project Poster.pdf](https://github.com/Alireza-Iranpour/User-Adaptive-Narrative-Visualizations/files/6470645/Project.Poster.pdf)
+![Project Poster](https://user-images.githubusercontent.com/58800171/118085974-197cf880-b378-11eb-9dc1-3136941472df.png)
